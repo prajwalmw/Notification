@@ -20,6 +20,7 @@ ImageButton imageButton;
     }
 
     public void getNotification(View view) {
+        //Notification is learnt...
         notification.showNotification(this, "Title", "This is the body", App.CHANNEL_ID_1);
     }
 }
