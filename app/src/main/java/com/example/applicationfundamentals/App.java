@@ -33,7 +33,11 @@ public class App extends Application {
             NotificationChannel notificationChannel_1 = new NotificationChannel(
                     CHANNEL_ID_1, "Channel 1", NotificationManager.IMPORTANCE_HIGH);
 
+            /*NotificationChannel notificationChannel_2 = new NotificationChannel(
+                    CHANNEL_ID_2, "Channel 2", NotificationManager.IMPORTANCE_HIGH);*/
+
             notificationManager.createNotificationChannel(notificationChannel_1);
+           // notificationManager.createNotificationChannel(notificationChannel_2);
             //notification channel is created...
         }
     }

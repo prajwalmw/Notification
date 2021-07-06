@@ -1,5 +1,6 @@
 package com.example.applicationfundamentals;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 
@@ -20,17 +21,21 @@ public class Notification {
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
 
         //Step 4...
-        NotificationCompat.Builder nBuilder = new NotificationCompat.Builder(context, channel_id)
+        android.app.Notification nBuilder = new NotificationCompat.Builder(context, channel_id)
                 //If the version is > Oreo than channel_id value will be ignored as the argument...
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(title)
-                .setContentText(body);
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setContentText(body).build();
 
         //If u pass a constant notification id eg. 1 than every notifi that will come will override its previous
         //notifi which means everytime only one notifi will be shown...But if you want that when u click on the button
         //u get new notification cards in status bar, u use random integer value function...
 
-        notificationManagerCompat.notify(1, nBuilder.build());
+        notificationManagerCompat.notify(1, nBuilder);
+        //notification id is very imp if you keep same throughout app than all the notification
+        // throughout the app will override...
 
 
     }

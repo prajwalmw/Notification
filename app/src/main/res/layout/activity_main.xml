@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,9 +14,26 @@
         android:layout_height="wrap_content"
         android:src="@android:mipmap/sym_def_app_icon"
         android:background="@color/teal_200"
-        android:layout_gravity="center_vertical"
-        android:padding="20dp"
-        android:onClick="getNotification"/>
+        android:onClick="getNotification"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/startservice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Service"
+        android:layout_below="@+id/imagebutton"
+        android:onClick="StartService"
+        android:layout_marginTop="20dp"/>
+        />
+
+    <Button
+        android:id="@+id/stopservice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="StopService"
+        android:layout_below="@+id/startservice"
+        android:text="Stop Service"/>
 
 
-</LinearLayout>
+</RelativeLayout>
